@@ -1,4 +1,3 @@
-import 'package:dw11_barbershop/src/core/exceptions/repository_exception.dart';
 import 'package:dw11_barbershop/src/core/fp/either.dart';
 import 'package:dw11_barbershop/src/core/restClient/rest_client.dart';
 import 'package:dw11_barbershop/src/model/barbershop_model.dart';

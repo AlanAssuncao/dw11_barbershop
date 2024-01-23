@@ -1,6 +1,5 @@
 import 'package:dw11_barbershop/src/core/exceptions/service_exception.dart';
 import 'package:dw11_barbershop/src/core/fp/either.dart';
-import 'package:dw11_barbershop/src/core/fp/nil.dart';
 import 'package:dw11_barbershop/src/core/providers/application_providers.dart';
 import 'package:dw11_barbershop/src/features/auth/login/login_state.dart';
 import 'package:dw11_barbershop/src/model/user_model.dart';

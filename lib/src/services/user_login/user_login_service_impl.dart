@@ -20,6 +20,10 @@ class UserLoginServiceImpl implements UserLoginService {
     final loginResult = await userRepository.login(email, password);
 
     switch (loginResult) {
+      case Success(value: final accessToken):
+        final sp = await SharedPreferences.getInstance();
+        sp.setString(LocalStorageKeys.accessToken, accessToken);
+        return Success(nil);
       case Failure(:final exception):
         return switch (exception) {
           AuthError() =>
@@ -27,10 +31,6 @@ class UserLoginServiceImpl implements UserLoginService {
           AuthUnauthorizedException() =>
             Failure(ServiceException(message: 'Login ou senha inválidos')),
         };
-      case Success(value: final accessToken):
-        final sp = await SharedPreferences.getInstance();
-        sp.setString(LocalStorageKeys.accessToken, accessToken);
-        return Success(nil);
     }
   }
 }
